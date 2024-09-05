@@ -2,8 +2,9 @@ import sys
 from PIL import Image
 
 def grayscale(rgb):
-    # If the pixel is transparent treat it like it's white
-    if len(rgb) > 3 and rgb[3] == 0:
+    if type(rgb) is int: # For single band images reverse the values, because then white returns 0
+        return 255 - rgb
+    elif len(rgb) > 3 and rgb[3] == 0: # If the pixel is transparent treat it like it's white
         return 255
     else: # Otherwise average the rgb values
         return sum(rgb[:3]) // 3
