@@ -1,12 +1,17 @@
-from flask import Flask
+from flask import Flask, render_template, request
+import generator
 
 app = Flask(__name__)
 
-
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def hello_world():
-    return "<p>Hello, World!</p>"
-
+    if request.method == "POST":
+        file = request.files.get("image", None)
+        if file:
+            print(generator.generate(file))
+        return ""
+    else:
+        return render_template("index.html", title="Main Page")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
