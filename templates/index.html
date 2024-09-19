@@ -2,8 +2,9 @@
 
 {% block content %}
     <form action="/result" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" accept="image/*">
+        <label for="image" class="file_label">UPLOAD FILE</label>
+        <input type="file" name="image" id="image" accept="image/*">
         <br>
-        <input type="submit" value="submit">
+        <input type="submit" value="SUBMIT">
     </form>
 {% endblock %}
