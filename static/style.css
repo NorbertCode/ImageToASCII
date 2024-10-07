@@ -42,6 +42,12 @@ input:hover,.file_label:hover {
   color: #d8e1e9;
 }
 
+textarea {
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: scroll;
+}
+
 .file_label {
   display: block;
 }

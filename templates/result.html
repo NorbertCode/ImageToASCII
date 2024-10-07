@@ -4,4 +4,14 @@
     <textarea readonly>{{ ascii }}</textarea>
     <br>
     <a href="{{ url_for('index') }}"><input type="button" value="RETURN"></a>
+
+    <script>
+        const textarea = document.querySelector("textarea")
+        
+        let textWidth = textarea.value.split("\n")[0].length
+        let newSize = Math.max(-1/6 * textWidth + 48, 4);
+
+        textarea.style.fontSize = `${newSize}px`;
+        textarea.style.lineHeight = `${newSize}px`;
+    </script>
 {% endblock %}
