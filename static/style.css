@@ -28,6 +28,7 @@ input,textarea,.file_label,img {
   color: #172a3a;
   margin: 1vh 0 1vh 0;
   width: 100%;
+  max-width: 100%;
   line-height: 4vh;
   font-size: 15px;
   border: 2px solid #379392;
@@ -47,7 +48,6 @@ input:hover,.file_label:hover {
 
 img {
   width: auto;
-  max-width: 100%;
   height: auto;
 }
 
