@@ -23,7 +23,7 @@ main {
   width: 75vw;
 }
 
-input,textarea,.file_label {
+input,textarea,.file_label,img {
   background-color: #d8e1e9;
   color: #172a3a;
   margin: 1vh 0 1vh 0;
@@ -43,6 +43,12 @@ input:hover,.file_label:hover {
 
 .file_label {
   display: block;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 input[type="file"] {
