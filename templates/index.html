@@ -2,6 +2,11 @@
 
 {% block content %}
     <form action="/result" method="post" enctype="multipart/form-data">
+        <select name="method" id="method">
+            <option value="average">Average method</option>
+            <option value="luminosity">Luminosity method</option>
+        </select>
+
         <label for="image" class="file_label">UPLOAD FILE</label>
         <input type="file" name="image" id="image" accept="image/*">
 
