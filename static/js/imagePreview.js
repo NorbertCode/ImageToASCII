@@ -5,6 +5,9 @@ function PreviewImage() {
     fileReader.onload = function (fileReaderEvent) {
         let preview = document.querySelector("#preview");
         if (preview == null) {
+            const selectionFeedback = document.querySelector("#selectionFeedback");
+            selectionFeedback.style.display = "none";
+
             preview = document.createElement("img");
             preview.setAttribute("id", "preview");
             document.querySelector("#previewHolder").appendChild(preview);
@@ -14,6 +17,8 @@ function PreviewImage() {
             cancelButton.setAttribute("class", "cancelButton");
             cancelButton.value = "REMOVE IMAGE";
             cancelButton.onclick = function () {
+                selectionFeedback.style.display = "block";
+
                 document.querySelector("#image").value = "";
                 preview.remove();
                 cancelButton.remove();
