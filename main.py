@@ -10,8 +10,9 @@ def index():
 @app.route("/result", methods=["POST"])
 def result():
     file = request.files.get("image", None)
+    method = request.form.get("method", "average")
     if file:
-        ascii = generator.generate(file)
+        ascii = generator.generate(file, method)
         return render_template("result.html", title="Result", ascii=ascii)
     else:
         return redirect("/error")
