@@ -8,6 +8,17 @@ function PreviewImage() {
             preview = document.createElement("img");
             preview.setAttribute("id", "preview");
             document.querySelector("#previewHolder").appendChild(preview);
+
+            const cancelButton = document.createElement("input");
+            cancelButton.setAttribute("type", "button");
+            cancelButton.setAttribute("class", "cancelButton");
+            cancelButton.value = "REMOVE IMAGE";
+            cancelButton.onclick = function () {
+                document.querySelector("#image").value = "";
+                preview.remove();
+                cancelButton.remove();
+            }
+            document.querySelector("#previewHolder").appendChild(cancelButton);
         }
 
         preview.src = fileReaderEvent.target.result;
