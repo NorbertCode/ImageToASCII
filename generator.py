@@ -36,9 +36,24 @@ def desaturation_method_grayscale(rgb):
 
     return (max(rgb[:3]) + min(rgb[:3])) // 2
 
+def max_decomposition_method_grayscale(rgb):
+    temp = handle_exceptions(rgb)
+    if temp != None: return temp
+
+    return max(rgb[:3])
+
+def min_decomposition_method_grayscale(rgb):
+    temp = handle_exceptions(rgb)
+    if temp != None: return temp
+
+    return min(rgb[:3])
+
 methods = {
     "average": average_method_grayscale,
-    "luminosity": luminosity_method_grayscale
+    "luminosity": luminosity_method_grayscale,
+    "desaturation": desaturation_method_grayscale,
+    "max_decomp": max_decomposition_method_grayscale,
+    "min_decomp": min_decomposition_method_grayscale
 }
 
 def generate(imageName, method="average"):
