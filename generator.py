@@ -30,6 +30,12 @@ def luminosity_method_grayscale(rgb):
     
     return int(0.21 * rgb[0] + 0.72 * rgb[1] + 0.07 * rgb[2])
 
+def desaturation_method_grayscale(rgb):
+    temp = handle_exceptions(rgb)
+    if temp != None: return temp
+
+    return (max(rgb[:3]) + min(rgb[:3])) // 2
+
 methods = {
     "average": average_method_grayscale,
     "luminosity": luminosity_method_grayscale
